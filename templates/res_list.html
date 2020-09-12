@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block content %}
+        <table class="table" style="text-align: center">
+            <thead>
+            <tr >
+                <th>Lp.</th>
+                <th>Klient</th>
+                <th>Adres</th>
+                <th>Pies</th>
+                <th>Trener</th>
+                <th>Szkolenie</th>
+                <th>Szkoła</th>
+                <th>Data</th>
+                <th>Rezerwacja od</th>
+                <th>Rezerwacja do</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for obj in objects %}
+                <tr>
+                    <th>{{ forloop.counter }}</th>
+                    <th>{{ obj.user.customer.customer_name }}</th>
+                    <th>{{ obj.user.customer.pet_name }}</th>
+                    <th>{{ obj.user.customer.address }}</th>
+                    <th>{{ obj.trainer.name }}</th>
+                    <th>{{ obj.training.name }}</th>
+                    <th>{{ obj.location }}</th>
+                    <th>{{ obj.date_of_reservation }}</th>
+                    <th>{{ obj.res_from }}:00</th>
+                    <th>{{ obj.res_to }}:00</th>
+                    <th>
+                        <form action="{{ obj.delete_res }}">
+                            <button class="myButton"
+                                    type="submit"> Usuń
+                            </button>
+                        </form>
+                    </th>
+                    <th>
+                        <form action="{{ obj.get_detail_url }}">
+                            <button class="myButton"
+                                    type="submit"> Edycja
+                            </button>
+                        </form>
+                    </th>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

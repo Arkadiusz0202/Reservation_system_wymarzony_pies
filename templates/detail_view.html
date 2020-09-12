@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+        <form method="POST" style="text-align: center">
+        <div class="form-group">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="myButton"><div class="button_cont" align="center"><a class="example_a" target="_blank" rel="nofollow noopener">
+        Dodaj </a></div></button>
+        </div>
+        </form>
+    </div>
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+
+    {% include 'obj_list.html' %}
+
+{% endblock %}
+
+
+
+
+

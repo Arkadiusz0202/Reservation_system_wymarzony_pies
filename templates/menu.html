@@ -1,0 +1,56 @@
+<nav class="site-navbar js-sticky-header site-navbar-target" role="banner"
+     style="position: fixed; background: rgba(255, 255, 255, 0.9)">
+    <main role="main" class="container">
+        <div class="row align-items-center">
+            <div class="col-10 col-xl-3">
+                <h1 class="mb-0 site-logo">
+                    <a href="http://127.0.0.1:8000/" class="h2 mb-0">Wymarzony Pies<span class="text-primary">.</span>
+                    </a>
+                </h1>
+            </div>
+            <div>Witaj!{% if user.is_authenticated %}
+                {{ user.username }} <br>
+            {% else %}
+                Nieznajomy
+            {% endif %}</div>
+            <div style="flex: unset">
+                <nav class="site-navigation position-relative text-right" role="navigation">
+                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                        <li class="has-children">
+                            {% if user.is_authenticated %}
+                                <a href="#about-section" class="nav-link">O nas</a>
+                                <ul class="dropdown">
+                                    <li><a href="/trainings/" class="nav-link">Szkolenia</a></li>
+                                    {% if request.user.is_superuser %}
+                                        <li><a href="/addloc/" class="nav-link">Dodaj szkołę</a></li>
+                                        <li><a href="/addtrainer/" class="nav-link">Dodaj trenera</a></li>
+                                        <li><a href="/addtraining/" class="nav-link">Dodaj szkolenie</a></li>
+                                        <li><a href="/allreservations/" class="nav-link">Rezerwacje klientów</a></li>
+                                    {% endif %}
+                                    <li><a href="/addreservation/" class="nav-link">Rezerwuj szkolenie</a></li>
+                                    <li><a href="/yourreservations/" class="nav-link">Twoje rezerwacje</a></li>
+                                    <li><a href="https://wymarzonypies.pl/category/porady/" class="nav-link">Blog</a>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><a href="/customer/" class="nav-link">Dodaj profil Klienta</a></li>
+                                <li><a href="#trainers-section" class="nav-link">Trenerzy</a></li>
+                                <li><a href="#site-footer" class="nav-link">Kontakt</a></li>
+                                <li class="has-children">
+                                <a href="#about-section" class="nav-link">Menu</a>
+                                <ul class="dropdown">
+                            {% else %}
+                                <li><a href="/registration" class="nav-link">Zarejestruj się</a></li>
+                                <li><a href="{% url 'login' %}" class="nav-link">Zaloguj się</a></li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'logout' %}" class="nav-link">Wyloguj się</a></li>
+                            {% endif %}
+                            </ul>
+                            </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+</nav>

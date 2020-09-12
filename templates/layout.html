@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Wymarzony Pies - Rezerwacje</title>
+    <link rel="icon"
+          href="https://d11vujduw2c5ae.cloudfront.net/wp-content/uploads/2017/05/cropped-Logo-512px-150x150.png" />
+    {% include 'head.html' %}
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" id="home-section">
+    {% include 'menu.html' %}
+
+    <div style="padding:100px 25px 25px 25px">
+
+    {% block content %}
+    {% endblock %}
+
+    </div>
+    <div>
+        {% load static %}
+         <section class="site-blocks-cover overflow-hidden bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 align-self-center text-center text-md-left">
+                    <div class="intro-text">
+                        <h1>Troszczymy się o<span class="d-md-block">Twojego psa</span></h1>
+                        <p class="mb-4">Szczęśliwy pies - to nasze motto!<span class="d-block"></span></p>
+                    </div>
+                </div>
+                <div class="col-md-5 align-self-center text-center text-md-right">
+                    <img src="{% static 'images/wymarzony.jpg' %}" alt="Image" class="img-fluid cover-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="site-section bg-primary trainers" id="trainers-section">
+        <div class="container">
+            <div class="row justify-content-center" data-aos="fade-up">
+                <div class="col-lg-7 text-center heading-section mb-5">
+                    <div class="paws white">
+                        <span class="icon-paw"></span>
+                    </div>
+                    <h2 class="mb-2 heading">Nasi Trenerzy</h2>
+                    <p>Opis.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4 col-lg-4" data-aos="fade-up" data-aos-delay="">
+                    <div class="trainer">
+                        <figure>
+                            <img src="{% static 'images/dog_trainer1.png' %}" alt="Image" class="img-fluid">
+                        </figure>
+                        <div class="px-md-3">
+                            <h3>Basia</h3>
+                            <p>Opis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="trainer">
+                        <figure>
+                            <img src="{% static 'images/dogger_trainer_2.jpg' %}" alt="Image" class="img-fluid">
+                        </figure>
+                        <div class="px-md-3">
+                            <h3>Julka</h3>
+                            <p>Opis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="trainer">
+                        <figure>
+                            <img src="{% static 'images/dogger_trainer_3.jpg' %}" alt="Image" class="img-fluid">
+                        </figure>
+                        <div class="px-md-3">
+                            <h3>Magda</h3>
+                            <p>Opis</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    </div>
+    {% include 'footer.html' %}
+
+     <!-- .site-wrap -->
+    {% load static %}
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% load static %}
+
+<section class="site-blocks-cover overflow-hidden bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 align-self-center text-center text-md-left">
+                <div class="intro-text">
+                    <h1>Troszczymy się o<span class="d-md-block">Twojego psa</span></h1>
+                    <p class="mb-4">Szczęśliwy pies - to nasze motto!<span class="d-block"></span></p>
+                </div>
+            </div>
+            <div class="col-md-5 align-self-center text-center text-md-right">
+                <img src="{% static 'images/wymarzony.jpg' %}" alt="Image" class="img-fluid cover-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="site-section bg-primary trainers" id="trainers-section">
+    <div class="container">
+        <div class="row justify-content-center" data-aos="fade-up">
+            <div class="col-lg-7 text-center heading-section mb-5">
+                <div class="paws white">
+                    <span class="icon-paw"></span>
+                </div>
+                <h2 class="mb-2 heading">Nasi Trenerzy</h2>
+                <p>Opis.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4 col-lg-4" data-aos="fade-up" data-aos-delay="">
+                <div class="trainer">
+                    <figure>
+                        <img src="{% static 'images/dog_trainer1.png' %}" alt="Image" class="img-fluid">
+                    </figure>
+                    <div class="px-md-3">
+                        <h3>Basia</h3>
+                        <p>Opis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="trainer">
+                    <figure>
+                        <img src="{% static 'images/dogger_trainer_2.jpg' %}" alt="Image" class="img-fluid">
+                    </figure>
+                    <div class="px-md-3">
+                        <h3>Julka</h3>
+                        <p>Opis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="trainer">
+                    <figure>
+                        <img src="{% static 'images/dogger_trainer_3.jpg' %}" alt="Image" class="img-fluid">
+                    </figure>
+                    <div class="px-md-3">
+                        <h3>Magda</h3>
+                        <p>Opis</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

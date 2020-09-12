@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="post" style="text-align: center">
+    <h1>Czy chcesz skaskować:</h1>
+    <p style="margin-left: 500px; margin-right: 500px">{{ obj }}</p>
+    {% csrf_token %}
+        <input type="submit" class="myButton" value="TAK" name="delete">
+        <input type="submit" class="myButton" value="NIE" name="delete">
+</form>
+
+{% endblock %}

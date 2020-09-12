@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div>
+        <form method="post" style="text-align: center">
+            <div>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Log in">
+            </div>
+    </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+    <div class="container" style="text-align: center">
+    {{ message }}
+        <table class="table">
+            {% for obj in objects %}
+                <tr>
+                    <th href="{{ obj.get_detail_url }}">{{ obj }}</th>
+                    <th>
+                        <form action="{{ obj.get_delete_url }}">
+                            <button class="myButton"
+                                    type="submit"> Usuń
+                            </button>
+                        </form>
+                    </th>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

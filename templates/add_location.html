@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% if error_message %}
+        <p style="text-align: center">{{ error_message }}</p>
+    {% endif %}
+    {% if succes_message %}
+        <p style="text-align: center">{{ succes_message }}</p>
+    {% endif %}
+    <form method="post" style="text-align: center">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label class="col-sm-2 label-size col-form-label">
+                Nazwa szkoły
+            </label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="locname" name="name"
+                       placeholder="Nazwa szkoły">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="locDescription"
+                   class="col-sm-2 label-size col-form-label">
+                Adres i opis szkoły
+            </label>
+            <div class="col-sm-5">
+                        <textarea class="form-control" rows="5" id="locDescription" name="description"
+                                  placeholder="Opis szkoły"></textarea>
+            </div>
+            <div class="col-sm-2">
+                <label>Otwarte od: </label>
+                <select class="form-control" name="open_from">
+                    {% for hour in hours %}
+                        <option name="{{ hour }}">{{ hour }}</option>
+                    {% endfor %}
+                </select>
+                <label>Otwarte do: </label>
+                <select class="form-control" name="open_to">
+                    {% for hour in hours %}
+                        <option name="{{ hour }}">{{ hour }}</option>
+                    {% endfor %}
+                </select>
+
+            </div>
+        </div>
+        <button type="submit" class="myButton">Dodaj lokalizacje</button>
+    </form>
+
+    {% include 'obj_list.html' %}
+
+{% endblock %}
