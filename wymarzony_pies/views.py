@@ -43,12 +43,12 @@ class AddLocation(PermissionRequiredMixin, View):
 
     def get(self, request):
         locations = Location.objects.all()
-        hours = [item for item in range(9, 22)]
+        hours = [item for item in range(6, 22)]
         loc = Location.objects.all()
         return render(request, 'add_location.html', {'loc': loc, 'hours': hours, 'objects': locations})
 
     def post(self, request):
-        hours = [item for item in range(9, 22)]
+        hours = [item for item in range(6, 22)]
         name = request.POST['name']
         address = request.POST['description']
         open_from = request.POST.get('open_from')
@@ -56,17 +56,16 @@ class AddLocation(PermissionRequiredMixin, View):
         locations = Location.objects.all()
         if name == "" or address == "" or open_from == "" or open_to == "":
             error_message = 'Uzupełnij wszystie pola!'
-            return render(request, 'add_location.html', {'error_message': error_message, 'hours': hours})
+            return render(request, 'add_location.html', {'error_message': error_message,
+                                                         'objects': locations, 'hours': hours})
         if open_from <= open_to:
             error_message = 'Błędne godziny!'
-            return render(request, 'add_location.html', {'error_message': error_message, 'hours': hours})
-        # if open_from not in range(1, 25) or open_to not in range(1, 25):
-        #     error_message = 'Błędne godziny!'
-        #     return render(request, 'add_location.html', {'error_message': error_message, 'hours': hours})
+            return render(request, 'add_location.html', {'error_message': error_message,
+                                                         'objects': locations, 'hours': hours})
         Location.objects.create(name=name, address=address, open_form=open_from, open_to=open_to)
         succes_message = 'Szkoła dodana!'
         return render(request,'add_location.html',
-                      {'succes_message': succes_message, 'objects': locations,'hours': hours })
+                      {'succes_message': succes_message, 'objects': locations})
 
 
 class LocationDeleteView(View):
