@@ -28,15 +28,15 @@
             </div>
             <div class="col-sm-2">
                 <label>Otwarte od: </label>
-                <select class="form-control" name="open_from">
+                <select class="selected" name="open_from">
                     {% for hour in hours %}
-                        <option name="{{ hour }}">{{ hour }}</option>
+                        <option name="{{ hour }}">{{ hour }}:00</option>
                     {% endfor %}
-                </select>
+                </select><br>
                 <label>Otwarte do: </label>
-                <select class="form-control" name="open_to">
+                <select class="selected" name="open_to">
                     {% for hour in hours %}
-                        <option name="{{ hour }}">{{ hour }}</option>
+                        <option name="{{ hour }}">{{ hour }}:00</option>
                     {% endfor %}
                 </select>
 

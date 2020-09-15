@@ -65,7 +65,7 @@ class AddLocation(PermissionRequiredMixin, View):
         Location.objects.create(name=name, address=address, open_form=open_from, open_to=open_to)
         succes_message = 'Szkoła dodana!'
         return render(request,'add_location.html',
-                      {'succes_message': succes_message, 'objects': locations})
+                      {'succes_message': succes_message, 'objects': locations, 'hours': hours})
 
 
 class LocationDeleteView(View):

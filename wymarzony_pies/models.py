@@ -29,9 +29,8 @@ class Trainer(models.Model):
 class Location(models.Model):
     name = models.CharField(max_length=128)
     address = models.CharField(max_length=128)
-    open_form = models.IntegerField()
-    open_to = models.IntegerField()
-
+    open_form = models.CharField(max_length=128)
+    open_to = models.CharField(max_length=128)
     def __str__(self):
         return f'Nazwa szkoły: {self.name}, opis lokalizacji: {self.address}' \
                f', otwarta od {self.open_form} do {self.open_to}'
